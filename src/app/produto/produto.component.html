@@ -1,0 +1,51 @@
+<div class="search-group">
+  <input type="text" [(ngModel)]="term" placeholder="Pesquisar nome">
+  <button class="search" (click)="filter()">Pesquisar</button>
+  <button (click)="cancel()" class="cancel">Cancelar</button>
+</div>
+<div>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; index as i">
+        <th scope="row">{{ i }}</th>
+        <td>
+          {{ product.name }}
+        </td>
+        <td>
+          {{ product.price | currency: 'BRL':true }}
+
+        </td>
+        <td>
+          <i class="fa fa-pencil" aria-hidden="true" (click)="getAtr(product)"></i>
+          <i class="fa fa-trash" aria-hidden="true" (click)="delete(product.id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+
+  <div *ngIf="!search">
+
+    <input [(ngModel)]="product.name" placeholder="Nome do produto" />
+
+    <input currencyMask [(ngModel)]="product.price" placeholder="Preço" />
+
+    <button *ngIf="!edit" class="create" (click)="create()">Salvar</button>
+    <button *ngIf="edit" class="put" (click)="put()">Alterar</button>
+    <button *ngIf="edit" class="cancel" (click)="cancel()">Cancelar</button>
+
+  </div>
+
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" color="#72d9f8">
+    <p>Cadastrando...</p>
+  </ngx-spinner>
+
+</div>

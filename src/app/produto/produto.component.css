@@ -1,0 +1,52 @@
+i{
+    padding: 5px;
+    border-radius: 3px;
+}
+
+i.fa-pencil{
+    background-color: #72d9f8;
+    margin-right: 5px;
+
+}
+
+i.fa-trash{
+   background-color: #ff6956;
+}
+
+input{
+    box-sizing: border-box;
+    padding: 3px;
+    border-radius: 7px;
+    border: solid 1px;
+    margin-right: 7px;
+}
+
+button{
+    padding-left: 5px;
+    border-radius: 7px; 
+    margin-right: 4px;
+    border: 2px solid #ffff;
+    color: #fff;
+    height: 32px;
+}
+
+.create{
+    background-color: #03bb49;
+    
+}
+
+.cancel{
+    background-color: #ff6956;
+}
+
+.put{
+    background-color: #72d9f8;
+}
+
+.search-group{
+    margin: 15px 0px 15px 0px;
+}
+
+.search{
+    background-color: #72d9f8;
+}
